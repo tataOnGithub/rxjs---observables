@@ -36,4 +36,4 @@ const users: User[] = [
 ];
 
 const users$ = from(users);
-users$.pipe(filter((x: User) => x.age >= 18)).subscribe((x: User) => console.log(x));
+users$.pipe(filter((x: User) => x.age >= 18)).subscribe((x: User) => console.log(`${x.firstName} ${x.lastName} ${x.age} years old`));
