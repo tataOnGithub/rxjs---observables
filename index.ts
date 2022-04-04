@@ -9,7 +9,7 @@ c$.pipe(map((x: string | number) => {
         return x * 10;
     }
     return x + x;
-})).subscribe((x: string | number) => console.log(x))
+})).subscribe((x: string | number) => console.log(x));
 
 //2
 const obs$ = interval(1000);
@@ -36,4 +36,4 @@ const users: User[] = [
 ];
 
 const users$ = from(users);
-users$.pipe(filter((x: User) => x.age >= 18)).subscribe((x: User) => console.log(`${x.firstName} ${x.lastName} ${x.age} years old`));
+users$.pipe(filter((x: User) => x.age >= 18), map((x) => `${x.firstName} ${x.lastName} ${x.age} years old`)).subscribe((x) => console.log(x));
